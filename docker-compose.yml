@@ -17,12 +17,11 @@ services:
     ports: 
       - 3001:3001
     environment: 
-      DB_URL: mongodb://democontainer2002.azurecr.io/db/vidly
+      DB_URL: mongodb://db/vidly
     command: ./docker-entrypoint.sh
 
   db:
     image: mongo:4.0-xenial
-    container_name: democontainer2002.azurecr.io/db
     ports:
       - 27017:27017
     volumes:
