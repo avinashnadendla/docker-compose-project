@@ -4,6 +4,7 @@ services:
   frontend:
     depends_on: 
       - backend
+    image: democontainer2002.azurecr.io/frontend
     build: ./frontend
     ports:
       - 3000:3000
@@ -12,14 +13,16 @@ services:
     depends_on: 
       - db
     build: ./backend
+    image: democontainer2002.azurecr.io/backend
     ports: 
       - 3001:3001
     environment: 
-      DB_URL: mongodb://db/vidly
+      DB_URL: mongodb://democontainer2002.azurecr.io/db/vidly
     command: ./docker-entrypoint.sh
 
   db:
     image: mongo:4.0-xenial
+    container_name: democontainer2002.azurecr.io/db
     ports:
       - 27017:27017
     volumes:
