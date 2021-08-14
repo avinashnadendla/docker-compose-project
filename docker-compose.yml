@@ -4,7 +4,6 @@ services:
   frontend:
     depends_on: 
       - backend
-    image: democontainer2002.azurecr.io/frontend
     build: ./frontend
     ports:
       - 3000:3000
@@ -13,7 +12,6 @@ services:
     depends_on: 
       - db
     build: ./backend
-    image: democontainer2002.azurecr.io/backend
     ports: 
       - 3001:3001
     environment: 
